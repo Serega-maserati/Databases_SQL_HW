@@ -11,13 +11,13 @@ LIMIT 1;
 -- Follow-up: если лидеров несколько (одинаковое число заказов),
 -- LIMIT 1 вернёт только одного. Вариант, который вернёт всех:
 --
--- SELECT customer_number
--- FROM Orders
--- GROUP BY customer_number
--- HAVING COUNT(*) = (
---     SELECT COUNT(*)
---     FROM Orders
---     GROUP BY customer_number
---     ORDER BY COUNT(*) DESC
---     LIMIT 1
--- );
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+HAVING COUNT(*) = (
+     SELECT COUNT(*)
+     FROM Orders
+     GROUP BY customer_number
+     ORDER BY COUNT(*) DESC
+     LIMIT 1);
+-- подзапрос в HAVING
