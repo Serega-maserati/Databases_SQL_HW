@@ -10,7 +10,6 @@ LIMIT 1;
 
 -- Follow-up: если лидеров несколько (одинаковое число заказов),
 -- LIMIT 1 вернёт только одного. Вариант, который вернёт всех:
---
 SELECT customer_number
 FROM Orders
 GROUP BY customer_number
